@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2015 Doltech Systems Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -13,18 +13,15 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package nz.co.doltech.gwtls.client.debug;
+package nz.co.doltech.gwtls.client.events;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.TextResource;
+import com.google.gwt.event.shared.EventHandler;
 
 /**
+ * Executes immediately before each "Next" slide transition.
+ *
  * @author Ben Dol
  */
-public interface SliderClientBundle extends ClientBundle {
-  SliderClientBundle INSTANCE = GWT.create(SliderClientBundle.class);
-
-  @Source("nz/co/doltech/gwtls/client/resources/js/lightslider-1.1.4.cache.js")
-  TextResource lightSliderDebug();
+public interface BeforeNextSlideHandler extends EventHandler {
+    void onBeforeNextSlide(BeforeNextSlideEvent event);
 }

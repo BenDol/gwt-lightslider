@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2015 Doltech Systems Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -22,9 +22,9 @@ import com.google.gwt.resources.client.TextResource;
 /**
  * @author Ben Dol
  */
-public interface SliderClientBundle extends ClientBundle {
-  SliderClientBundle INSTANCE = GWT.create(SliderClientBundle.class);
+public interface WithJQueryClientBundle extends ClientBundle {
+  WithJQueryClientBundle INSTANCE = GWT.create(WithJQueryClientBundle.class);
 
-  @Source("nz/co/doltech/gwtls/client/resources/js/lightslider-1.1.4.cache.js")
-  TextResource lightSliderDebug();
+  @Source("nz/co/doltech/gwtls/client/resources/js/jquery-1.11.3.cache.js")
+  TextResource jqueryDebug();
 }

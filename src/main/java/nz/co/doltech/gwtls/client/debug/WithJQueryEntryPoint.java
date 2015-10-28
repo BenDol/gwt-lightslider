@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2015 Doltech Systems Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -15,16 +15,25 @@
  */
 package nz.co.doltech.gwtls.client.debug;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.TextResource;
+import nz.co.doltech.gwtls.client.SliderEntryPoint;
 
-/**
- * @author Ben Dol
- */
-public interface SliderClientBundle extends ClientBundle {
-  SliderClientBundle INSTANCE = GWT.create(SliderClientBundle.class);
+public class WithJQueryEntryPoint extends SliderEntryPoint {
 
-  @Source("nz/co/doltech/gwtls/client/resources/js/lightslider-1.1.4.cache.js")
-  TextResource lightSliderDebug();
+    @Override
+    public void onModuleLoad() {
+        if(!isJQueryLoaded()) {
+            inject(WithJQueryClientBundle.INSTANCE.jqueryDebug(), false, true);
+        }
+
+        super.onModuleLoad();
+    }
+
+    /**
+     * Check to see if jQuery is loaded already
+     *
+     * @return true is jQuery is loaded, false otherwise
+     */
+    public static native boolean isJQueryLoaded() /*-{
+        return (typeof $wnd['jQuery'] !== 'undefined');
+    }-*/;
 }

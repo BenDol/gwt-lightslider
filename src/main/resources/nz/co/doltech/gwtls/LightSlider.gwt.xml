@@ -16,7 +16,7 @@
   ~  * the License.
   ~  */
   -->
-<module rename-to="gwtjssor">
+<module rename-to="gwtls">
   <inherits name="nz.co.doltech.gwtls.LightSliderBase"/>
   <inherits name="nz.co.doltech.gwtls.client.resources.Resources"/>
 
