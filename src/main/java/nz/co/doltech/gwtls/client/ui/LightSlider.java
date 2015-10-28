@@ -39,7 +39,7 @@ public class LightSlider extends ComplexWidget {
 
     // Options
 
-    private int item = 3;
+    private int item = 1;
     private boolean autoWidth;
     private int slideMove = 1;
     private int slideMargin = 10;
@@ -78,6 +78,13 @@ public class LightSlider extends ComplexWidget {
     public LightSlider() {
         setElement(Document.get().createULElement());
         getElement().setId("lightSlider");
+    }
+
+    @Override
+    protected void onLoad() {
+        if(impl == null) {
+            initialize();
+        }
     }
 
     // Setters/Getters

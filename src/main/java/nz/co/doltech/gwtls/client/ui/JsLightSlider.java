@@ -18,7 +18,8 @@ package nz.co.doltech.gwtls.client.ui;
 import com.google.gwt.core.client.JavaScriptObject;
 
 /**
- * Javascript object representing the
+ * Javascript object representing the {@link LightSlider} implementation.
+ * This gives access to the javascript public methods.
  */
 public class JsLightSlider extends JavaScriptObject {
     protected JsLightSlider() {
