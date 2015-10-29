@@ -584,6 +584,19 @@ public class LightSlider extends ComplexWidget {
     }
 
     /**
+     * Destroys the existing slider implementation
+     * and initializes.
+     */
+    public void reinitialize() {
+        if(impl != null) {
+            impl.destroy();
+        }
+        impl = null;
+
+        initialize();
+    }
+
+    /**
      * Initialize the Light Slider widget.
      */
     public void initialize() {
