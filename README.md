@@ -30,6 +30,34 @@ Note that the default `LightSlider` modules assume you have JQuery library alrea
 <inherits name="nz.co.doltech.gwtls.LightSliderDebugWithJQuery" />
 ```
 
+## Usage Guide
+The use is simple and can be done using standard Java or can make use of the UiBinder.
+
+Import the xmlns for uibinder 
+```xml
+xmlns:ls="urn:import:nz.co.doltech.gwtls.client.ui"
+```
+
+Then make use of the Widget, like so:
+```xml
+<ls:LightSlider ui:field="slider" gallery="true" adaptiveHeight="true">
+    <ls:Slide imageUrl="images/1.png" thumbUrl="thumbs/1.png" />
+    <ls:Slide imageUrl="images/2.png" thumbUrl="thumbs/2.png" />
+</ls:LightSlider>
+```
+
+Slides can also be added dynamically:
+```java
+@UiField LightSlider slider;
+
+public void addNewSlide() {
+   slider.add(new Slider("images/1/png", "thumbs/2.png"));
+}
+```
+
+## API Documentation
+You can find the libraries API documentation [here](https://github.com/BenDol/gwt-lightslider/wiki/API-Documentation)
+
 ## Issues
 If you find any issues please list them in the [issue tracker](https://github.com/BenDol/gwt-lightslider/issues) and it will be looked into as soon as possible.
 
