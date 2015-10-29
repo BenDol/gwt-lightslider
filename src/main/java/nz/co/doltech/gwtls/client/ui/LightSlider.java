@@ -590,9 +590,8 @@ public class LightSlider extends ComplexWidget {
     public void reinitialize() {
         if(impl != null) {
             impl.destroy();
+            impl = null;
         }
-        impl = null;
-
         initialize();
     }
 
