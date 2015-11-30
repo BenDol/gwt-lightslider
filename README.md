@@ -51,7 +51,7 @@ Slides can also be added dynamically:
 @UiField LightSlider slider;
 
 public void addNewSlide() {
-   slider.add(new Slider("images/1/png", "thumbs/2.png"));
+   slider.add(new Slider("images/2.png", "thumbs/2.png"));
 }
 ```
 
