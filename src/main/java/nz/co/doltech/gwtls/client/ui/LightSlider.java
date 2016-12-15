@@ -82,8 +82,20 @@ public class LightSlider extends ComplexWidget {
 
     @Override
     protected void onLoad() {
+        super.onLoad();
+
         if(impl == null) {
             initialize();
+        }
+    }
+
+    @Override
+    protected void onUnload() {
+        super.onUnload();
+
+        if(impl != null) {
+            destroy();
+            impl = null;
         }
     }
 
