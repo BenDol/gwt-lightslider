@@ -15,6 +15,7 @@
  */
 package nz.co.doltech.gwtls.client.ui;
 
+import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.Image;
@@ -46,9 +47,14 @@ public class Slide extends ComplexWidget {
     protected void onLoad() {
         super.onLoad();
 
-        if(autoSize) {
-            image.setWidth(getElement().getClientWidth() + "px");
-        }
+        Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
+            @Override
+            public void execute() {
+                if(autoSize) {
+                    image.setWidth(getElement().getClientWidth() + "px");
+                }
+            }
+        });
     }
 
     public void setThumbUrl(String thumbUrl) {
