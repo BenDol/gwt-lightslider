@@ -24,6 +24,8 @@ public class Slide extends ComplexWidget {
 
     private final Image image;
 
+    private boolean autoSize;
+
     @UiConstructor
     public Slide(String imageUrl) {
         this(imageUrl, null);
@@ -40,11 +42,28 @@ public class Slide extends ComplexWidget {
         add(image);
     }
 
+    @Override
+    protected void onLoad() {
+        super.onLoad();
+
+        if(autoSize) {
+            image.setWidth(getElement().getClientWidth() + "px");
+        }
+    }
+
     public void setThumbUrl(String thumbUrl) {
         getElement().setAttribute("data-thumb", thumbUrl);
     }
 
     public Image getImage() {
         return image;
+    }
+
+    public boolean isAutoSize() {
+        return autoSize;
+    }
+
+    public void setAutoSize(boolean autoSize) {
+        this.autoSize = autoSize;
     }
 }
